@@ -2,9 +2,219 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Course List</title>
+
+    <link
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            rel="stylesheet"
+    >
+
+    <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+
+    <link
+            href="course-list.style.client.css"
+            rel="stylesheet"
+    />
+
 </head>
-<body>
-    hello from webdev!
+<body style="background-color: #ededed">
+<div class="container-fluid">
+    <div class="row nbar">
+        <div class="col-sm-1 col-2 wbdv-field wbdv-hamburger">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+        <label class="col-sm-2 d-none d-sm-block wbdv-label wbdv-course-manager">Course Manager</label>
+        <input type="text" placeholder="New Course Title" class="col-sm-7 col-8 wbdv-field wbdv-new-course">
+        <a href="#" class="col-sm-2 col-2 wbdv-button wbdv-add-course">
+            <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+<div class="container-fluid course-list-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 d-none d-sm-block">
+                <span class="wbdv-header wbdv-title">&nbsp;&nbsp;&nbsp;Title</span>
+            </div>
+            <div class="col-sm-2 d-none d-sm-block">
+                <span class="wbdv-header wbdv-owner">Owned by</span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+            <div class="col-sm-2 d-none d-sm-block">
+                <span class="wbdv-header wbdv-last-modified" style="font-size: small">Last modified by me</span>
+            </div>
+            <div class="col-sm-1 d-none d-sm-block">
+                <i class="fas fa-grip-horizontal wbdv-button wbdv-grid-layout"></i>
+            </div>
+            <div class="col-sm-1 d-none d-sm-block">
+                <i class="fas fa-sort-alpha-down wbdv-header wbdv-sort"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;CS5500 Software Engineering Gradutate</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">6:45 PM</span>
+        </div>
+        <span class="col-sm-1 d-none d-sm-block"></span>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;CS4550 Software Engineering Undergradutate</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">6:45 PM</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;CS4500 WebDev Undergraduate</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">6:45 PM</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;CS5610 WebDev Graduate</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">6:45 PM</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;CS5200 Intro to Databases</span>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">6:45 PM</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container wbdv-change-date">
+    <div class="row">
+        <span >&nbsp;&nbsp;Yesterday</span>
+    </div>
+</div>
+
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;WEBDEV 2 - React&nbsp;&nbsp;&nbsp;</span>
+            <i class="fas fa-user-friends"></i>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">May 4, 2018</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container wbdv-change-date">
+    <div class="row">
+        <span >&nbsp;&nbsp;Previous 7 days</span>
+    </div>
+</div>
+
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;WEBDEV Syllabus&nbsp;&nbsp;&nbsp;</span>
+            <i class="fas fa-user-friends"></i>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">May 3, 2018</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+
+<div class="container course-list-container-2">
+    <div class="row wbdv-row wbdv-course">
+        <div class="col-sm-6 col-11">
+            <i class="fas fa-file-alt wbdv-row wbdv-icon"></i>
+            <span class="wbdv-row wbdv-title">&nbsp;&nbsp;&nbsp;WEBDEV 1 - JavaScript, Java, SQL&nbsp;&nbsp;&nbsp;</span>
+            <i class="fas fa-user-friends"></i>
+        </div>
+        <div class="col-sm-2 d-none d-sm-block">
+            <span class="wbdv-row wbdv-owner">me</span>
+        </div>
+        <div class="col-sm-3 d-none d-sm-block">
+            <span class="wbdv-row wbdv-modified-date">May 4, 2018</span>
+        </div>
+        <div class="col-sm-1 col-1" style="text-align: right">
+            <i class="fas fa-times wbdv-row wbdv-button wbdv-delete"></i>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
