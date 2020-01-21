@@ -61,3 +61,11 @@
     font-weight: bold;
     padding: 10px;
 }
+
+.wbdv-static{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    background: none;
+}
