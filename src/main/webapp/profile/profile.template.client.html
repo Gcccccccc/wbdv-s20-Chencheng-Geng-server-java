@@ -12,11 +12,19 @@
             href="profile.style.client.css"
             rel="stylesheet"
     />
-
+<!--    <script type="text/javascript">-->
+<!--        function display_alert()-->
+<!--        {-->
+<!--            alert("Profile successfully saved")-->
+<!--        }-->
+<!--    </script>-->
 </head>
 <body>
 <div class="container">
     <h1>Profile</h1>
+    <div class="alert alert-success" role="alert">
+        Profile successfully saved
+    </div>
     <form>
 <!--        username-->
         <div class="form-group row">
@@ -30,6 +38,18 @@
                        title="please input username">
             </div>
         </div>
+
+<!--        password-->
+<div class="form-group row">
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+        <input type="text"
+               class="form-control wbdv-field wbdv-password"
+               id="password"
+               placeholder="123$%345"
+               title="please input password">
+    </div>
+</div>
 
 <!--        phone number-->
         <div class="form-group row">
@@ -89,8 +109,9 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-control"></label>
             <div class="col-sm-10">
-                <button id="update-btn" class="btn btn-primary btn-block wbdv-button wbdv-update">Update</button>
-                <button id="logout-btn" class="btn btn-primary btn-block wbdv-button wbdv-logout">Logout</button>
+                <a class="btn btn-success btn-block" href="#">Update</a>
+<!--                <button id="logout-btn" class="btn btn-primary btn-block wbdv-button wbdv-logout" ><a href="../login/login.template.client.html">Logout</a></button>-->
+                <a class="btn btn-danger btn-block" href="../login/login.template.client.html">Logout</a>
             </div>
         </div>
     </form>
