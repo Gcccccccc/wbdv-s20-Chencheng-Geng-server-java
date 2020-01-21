@@ -2,9 +2,212 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Course Editor</title>
+    <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="course-editor.style.client.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            rel="stylesheet"
+    >
+
 </head>
 <body>
-$END$
+
+<div class="container-fluid">
+    <div class="row nbar-editor">
+        <div class="col-1">
+            <a class="wbdv-course-editor wbdv-close" href="../index.html">
+                <i class="fas fa-times fa-2x" style="color: lightgray;"></i>
+            </a>
+        </div>
+        <div class="col-3">
+            <b style="color: white;font-size: larger;" class="wbdv-course-title">CS5610 - WebDev</b>
+        </div>
+        <div class="col-7">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link wbdv-page-tab" href="#">
+                        <b>Build</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active wbdv-page-tab" href="#">
+                        <b>Pages</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-page-tab" href="#">
+                        <b>Theme</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-page-tab" href="#">
+                        <b>Store</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-page-tab" href="#">
+                        <b>App</b>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link wbdv-page-tab" href="#">
+                        <b>Settings</b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-1">
+            <i class="fas fa-plus fa-2x" style="color: lightgray"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 mudule-lst">
+        <div class="nav flex-column nav-pills wbdv-module-list" aria-orientation="vertical">
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link  wbdv-module-item-title" href="#">
+                    Module 1 - jQuery
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item wbdv-module-item-active nav-item">
+                <a class="nav-link  wbdv-module-item-title active" href="#">
+                    Module 2 - React
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link wbdv-module-item-title" href="#">
+                    Module 3 - Redux
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link wbdv-module-item-title" href="#">
+                    Module 5 - Native
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link wbdv-module-item-title" href="#">
+                    Module 5 - Angular
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link wbdv-module-item-title" href="#">
+                    Module 6 - Node
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+            <div class="wbdv-module-item nav-item">
+                <a class="nav-link wbdv-module-item-title" href="#">
+                    Module 7 - Mongo
+                    <button class="btn" class="wbdv-module-item-delete-btn" style="float: right"><i class="fas fa-times fa-lg" style="color: white"></i></button>
+                </a>
+            </div>
+
+            <div>
+                <a class="btn wbdv-module-item-add-btn" style="float: right"><i class="fas fa-plus fa-2x" style="color: white"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 topics">
+        <ul class="nav nav-pills wbdv-topic-pill-list">
+            <li class="nav-item">
+                <a class="nav-link wbdv-topic-pill" href="#">
+                    <b>Topic 1</b>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active wbdv-topic-pill" href="#">
+                    <b>Topic 2</b>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link wbdv-topic-pill" href="#">
+                    <b>Topic 3</b>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link wbdv-topic-pill" href="#">
+                    <b>Topic 4</b>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link wbdv-topic-pill" href="#">
+                    <i class="fas fa-plus" style="color: white"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="row" style="margin-bottom: 20px">
+            <div class="col-9"></div>
+            <div class="col-3 preview-toggle">
+                <a class="btn btn-success">
+                    <b style="color: white;">Save</b>
+                </a>
+                <span style="margin: 10px">
+                    <b>Preview</b>
+                </span>
+                <a href="#">
+                    <i class="fas fa-toggle-off fa-2x" style="color: black"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="heading-widget">
+                <div class="row">
+                    <div class="col-8" style="padding: 20px">
+                        <h2>&nbsp;&nbsp;&nbsp;Heading Widget</h2>
+                    </div>
+                    <div class="col-4 hd-widget-row">
+                        <i class="fas fa-arrow-circle-up fa-2x"></i>
+                        <i class="fas fa-arrow-circle-down fa-2x"></i>
+                        <select class="form-control" style="width: 150px;margin-left: 10px;margin-right: 10px">
+                            <option>
+                                Heading
+                            </option>
+                        </select>
+                        <i class="fas fa-times fa-2x"></i>
+                    </div>
+                </div>
+                <div class="container">
+                    <input  class="course-editor-input form-control" type="text" value="heading text">
+                </div>
+                <div class="container">
+                    <select  class="course-editor-select form-control">
+                        <option>
+                            heading 1
+                        </option>
+                    </select>
+                </div>
+                <div class="container">
+                    <input  class="course-editor-input form-control" type="text" value="Widget name">
+                </div>
+                <h2>&nbsp;&nbsp;&nbsp;Preview</h2>
+                <h1>&nbsp;&nbsp;&nbsp;Heading text</h1>
+            </div>
+        </div>
+
+        <div align="right">
+            <button class="wbdv-static"><i class="fas fa-plus-circle fa-3x"></i></button>
+        </div>
+
+
+    </div>
+</div>
+
+
 </body>
 </html>
