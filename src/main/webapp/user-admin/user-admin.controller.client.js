@@ -42,8 +42,24 @@
 
     }
 
-    const updateUser = (index) => {
-
+    const updateUser = () => {
+        const _id = userList[currentIndex]._id
+        const newUser = {
+            Username : $usernameFld.val(),
+            Password : $passwordFld.val(),
+            FirstName : $firstNameFld.val(),
+            LastName : $lastNameFld.val(),
+            Role : $roleFld.val()
+        }
+        $usernameFld.val("")
+        $passwordFld.val("")
+        $firstNameFld.val("")
+        $lastNameFld.val("")
+        $roleFld.val("")
+        userService.updateUser(_id,newUser)
+            .then(newUser => {
+                findAllUsers()
+            })
     }
 
     const deleteUser = (index) => {
@@ -55,9 +71,11 @@
             })
     }
 
+    let currentIndex = -1
     const renderUser = (index) => {
         const user = userList[index]
         const user_id = user._id
+        currentIndex = index
         findUserById(user_id)
             .then(ret_val => {
                 //console.log(ret_val)
@@ -125,7 +143,7 @@
         $userRowTemplate = $("#userRowTemplate")
         $createBtn.click(createUser)
         $updateBtn.click(updateUser)
-        // $userRowTemplate = $("<tr class="wbdv-template wbdv-user wbdv-hidden">")
+        $userRowTemplate = $("#userRowTemplate")
     }
     $(main);
 })();
