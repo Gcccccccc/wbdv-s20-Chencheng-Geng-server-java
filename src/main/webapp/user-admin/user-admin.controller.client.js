@@ -6,8 +6,9 @@
     let userService = new AdminUserServiceClient();
     let userList = []
 
-
+    let currentIndex = -1 // remember the current index of edit data
     const createUser = () => {
+        currentIndex = -1
         const newUser = {
             Username : $usernameFld.val(),
             Password : $passwordFld.val(),
@@ -43,26 +44,29 @@
     }
 
     const updateUser = () => {
-        const _id = userList[currentIndex]._id
-        const newUser = {
-            Username : $usernameFld.val(),
-            Password : $passwordFld.val(),
-            FirstName : $firstNameFld.val(),
-            LastName : $lastNameFld.val(),
-            Role : $roleFld.val()
+        if(currentIndex != -1) {
+            const _id = userList[currentIndex]._id
+            const newUser = {
+                Username: $usernameFld.val(),
+                Password: $passwordFld.val(),
+                FirstName: $firstNameFld.val(),
+                LastName: $lastNameFld.val(),
+                Role: $roleFld.val()
+            }
+            $usernameFld.val("")
+            $passwordFld.val("")
+            $firstNameFld.val("")
+            $lastNameFld.val("")
+            $roleFld.val("")
+            userService.updateUser(_id, newUser)
+                .then(newUser => {
+                    findAllUsers()
+                })
         }
-        $usernameFld.val("")
-        $passwordFld.val("")
-        $firstNameFld.val("")
-        $lastNameFld.val("")
-        $roleFld.val("")
-        userService.updateUser(_id,newUser)
-            .then(newUser => {
-                findAllUsers()
-            })
     }
 
     const deleteUser = (index) => {
+        currentIndex = -1
         const user = userList[index]
         const user_id = user._id
         userService.deleteUser(user_id)
@@ -71,7 +75,6 @@
             })
     }
 
-    let currentIndex = -1
     const renderUser = (index) => {
         const user = userList[index]
         const user_id = user._id
