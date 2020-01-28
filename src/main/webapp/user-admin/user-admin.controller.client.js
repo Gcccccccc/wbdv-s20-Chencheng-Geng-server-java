@@ -37,7 +37,12 @@
             })
     }
 
-    const findUserById = () => {
+    const findUserById = (id) => {
+        return userService.findUserById(id)
+
+    }
+
+    const updateUser = (index) => {
 
     }
 
@@ -50,13 +55,20 @@
             })
     }
 
-    const updateUser = (index) => {
-
+    const renderUser = (index) => {
+        const user = userList[index]
+        const user_id = user._id
+        findUserById(user_id)
+            .then(ret_val => {
+                //console.log(ret_val)
+                $usernameFld.val(ret_val.Username)
+                $passwordFld.val("******")
+                $firstNameFld.val(ret_val.FirstName)
+                $lastNameFld.val(ret_val.LastName)
+                $roleFld.val(ret_val.Role)
+            })
     }
 
-    const renderUser = (user) => {
-
-    }
     const renderUsers = (users) => {
         $tbody.empty();
         for(let i in users){
@@ -92,7 +104,7 @@
                 deleteUser(i)
             })
             $editBtn.click(()=>{
-                updateUser(i)
+                renderUser(i)
             })
         }
     }
