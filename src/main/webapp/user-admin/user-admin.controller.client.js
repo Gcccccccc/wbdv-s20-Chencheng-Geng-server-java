@@ -1,6 +1,6 @@
 (function () {
     let $usernameFld, $passwordFld;
-    let $removeBtn, $editBtn, $createBtn, $updateBtn;
+    let $createBtn, $updateBtn;
     let $firstNameFld, $lastNameFld, $roleFld;
     let $userRowTemplate, $tbody;
     let userService = new AdminUserServiceClient();
@@ -15,6 +15,12 @@
             LastName : $lastNameFld.val(),
             Role : $roleFld.val()
         }
+        $usernameFld.val("")
+        $passwordFld.val("")
+        $firstNameFld.val("")
+        $lastNameFld.val("")
+        $roleFld.val("")
+
         userService.createUser(newUser)
             .then(brandNewUser => {
                 findAllUsers()
@@ -30,12 +36,24 @@
                 renderUsers(userList)
             })
     }
-    const findUserById = () => {}
-    const deleteUser = () => {
+
+    const findUserById = () => {
 
     }
-    function selectUser() {}
-    function updateUser() {}
+
+    const deleteUser = (index) => {
+        const user = userList[index]
+        const user_id = user._id
+        userService.deleteUser(user_id)
+            .then(response => {
+                findAllUsers()
+            })
+    }
+
+    const updateUser = (index) => {
+
+    }
+
     const renderUser = (user) => {
 
     }
@@ -57,19 +75,25 @@
             newAction.addClass("wbdv-actions")
             let newSpan = $(`<span></span>`)
             newSpan.addClass("float-right")
-            let newRemove = $(`<i id="wbdv-remove" class="fa-2x fa fa-times wbdv-remove"></i>`)
-            let newEdit = $(`<i id="wbdv-edit" class="fa-2x fa fa-pencil wbdv-edit"></i>`)
-            newSpan.append(newRemove)
-            newSpan.append(newEdit)
+            let $removeBtn = $(`<i id="wbdv-remove" class="fa-2x fa fa-times wbdv-remove btn"></i>`)
+            let $editBtn = $(`<i id="wbdv-edit" class="fa-2x fa fa-pencil wbdv-edit btn"></i>`)
+            newSpan.append($removeBtn)
+            newSpan.append($editBtn)
             newAction.append(newSpan)
             newRow.append(newUsername)
             newRow.append(newNbsp)
             newRow.append(newFirstName)
             newRow.append(newLastName)
+            newRow.append(newRole)
             newRow.append(newAction)
             $tbody.append(newRow)
-            newRemove.click(deleteUser)
-            newEdit.click(updateUser())
+
+            $removeBtn.click(()=>{
+                deleteUser(i)
+            })
+            $editBtn.click(()=>{
+                updateUser(i)
+            })
         }
     }
     findAllUsers()
