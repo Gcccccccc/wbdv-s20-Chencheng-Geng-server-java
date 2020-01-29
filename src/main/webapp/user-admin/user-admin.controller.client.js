@@ -5,7 +5,8 @@
     let $userRowTemplate, $tbody;
     let userService = new AdminUserServiceClient();
     let userList = []
-
+    let $removeBtn
+    let $editBtn
     let currentIndex = -1 // remember the current index of edit data
     const createUser = () => {
         currentIndex = -1
@@ -44,6 +45,7 @@
     }
 
     const updateUser = () => {
+        // if currentIndex != -1 which means after click editBtn userList index has been changed so don't update
         if(currentIndex != -1) {
             const _id = userList[currentIndex]._id
             const newUser = {
@@ -67,19 +69,17 @@
 
     const deleteUser = (index) => {
         currentIndex = -1
-        const user = userList[index]
-        const user_id = user._id
-        userService.deleteUser(user_id)
+        let id = userList[index]._id
+        userService.deleteUser(id)
             .then(response => {
                 findAllUsers()
             })
     }
 
-    const renderUser = (index) => {
-        const user = userList[index]
-        const user_id = user._id
+    const selectUser = (index) => {
         currentIndex = index
-        findUserById(user_id)
+        let id = userList[index]._id
+        findUserById(id)
             .then(ret_val => {
                 //console.log(ret_val)
                 $usernameFld.val(ret_val.Username)
@@ -90,50 +90,40 @@
             })
     }
 
+    const renderUser = (user) => {
+        $newRow = $userRowTemplate.clone()
+        $newRow.attr("class","wbdv-user")
+        $newRow.find(".wbdv-username").html(user.Username)
+        $newRow.find(".wbdv-first-name").html(user.FirstName)
+        $newRow.find(".wbdv-last-name").html(user.LastName)
+        $newRow.find(".wbdv-role").html(user.Role)
+
+        $removeBtn = $newRow.find(".wbdv-remove")
+        $removeBtn.attr("id","wbdv-remove-" + user._id)
+
+        $editBtn = $newRow.find(".wbdv-edit")
+        $editBtn.attr("id","wbdv-edit-" + user._id)
+
+        $tbody.append($newRow)
+
+    }
+
     const renderUsers = (users) => {
         $tbody.empty();
         for(let i in users){
-            let newRow = $("<tr></tr>")
-            newRow.addClass("wbdv-template wbdv-user wbdv-hidden")
-            let newUsername = $(`<td>${users[i].Username}</td>`)
-            newUsername.addClass("wbdv-username")
-            let newNbsp = $(`<td>&nbsp;</td>`)
-            let newFirstName = $(`<td>${users[i].FirstName}</td>`)
-            newFirstName.addClass("wbdv-first-name")
-            let newLastName = $(`<td>${users[i].LastName}</td>`)
-            newLastName.addClass("wbdv-last-name")
-            let newRole = $(`<td>${users[i].Role}</td>`)
-            newRole.addClass("wbdv-role")
-            let newAction = $(`<td></td>`)
-            newAction.addClass("wbdv-actions")
-            let newSpan = $(`<span></span>`)
-            newSpan.addClass("float-right")
-            let $removeBtn = $(`<i id="wbdv-remove" class="fa-2x fa fa-times wbdv-remove btn"></i>`)
-            let $editBtn = $(`<i id="wbdv-edit" class="fa-2x fa fa-pencil wbdv-edit btn"></i>`)
-            newSpan.append($removeBtn)
-            newSpan.append($editBtn)
-            newAction.append(newSpan)
-            newRow.append(newUsername)
-            newRow.append(newNbsp)
-            newRow.append(newFirstName)
-            newRow.append(newLastName)
-            newRow.append(newRole)
-            newRow.append(newAction)
-            $tbody.append(newRow)
+            renderUser(users[i])
+            $removeBtn = $("#wbdv-remove-"+users[i]._id)
+            $editBtn = $("#wbdv-edit-"+users[i]._id)
 
-            $removeBtn.click(()=>{
+            $removeBtn.click(() =>{
                 deleteUser(i)
             })
-            $editBtn.click(()=>{
-                renderUser(i)
+
+            $editBtn.click(() =>{
+                selectUser(i)
             })
         }
     }
-    findAllUsers()
-
-
-
-
     function main() {
         $usernameFld = $("#usernameFld")
         $passwordFld = $("#passwordFld")
@@ -146,9 +136,10 @@
         $userRowTemplate = $("#userRowTemplate")
         $createBtn.click(createUser)
         $updateBtn.click(updateUser)
-        $userRowTemplate = $("#userRowTemplate")
+        $userRowTemplate = $(".wbdv-template")
     }
     $(main);
+    findAllUsers()
 })();
 
 
