@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+
 public class WidgetService {
     List<Widget> widgetList = new ArrayList<Widget>();
 
