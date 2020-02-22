@@ -7,11 +7,11 @@ public class Widget {
     private int order;
     private String text;
     private String url;
-    private int size;
+    private int size = 1;
     private int width;
     private int height;
     private String cssClass;
-    private String style;
+    private String style = "HEADING";
     private String value;
     private String topicId;
 
@@ -21,6 +21,10 @@ public class Widget {
 
     public void setTopicId(String topicId) {
         this.topicId = topicId;
+    }
+
+    public Widget(String style) {
+        this.style = style;
     }
 
     public Widget(String name, String type, String topicId) {

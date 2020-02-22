@@ -13,14 +13,6 @@ import java.util.stream.Collectors;
 public class WidgetService {
     List<Widget> widgetList = new ArrayList<Widget>();
 
-    {
-        Widget a1 = new Widget("widget 1","heading","111");
-        Widget a2 = new Widget("widget 2","paragraph","111");
-        Widget a3 = new Widget("widget 3","heading","222");
-        widgetList.add(a1);
-        widgetList.add(a2);
-        widgetList.add(a3);
-    }
     public Widget createWidget(String tid,Widget widget){
         widget.setTopicId(tid);
         widget.setId(new Date().getTime()+"");
