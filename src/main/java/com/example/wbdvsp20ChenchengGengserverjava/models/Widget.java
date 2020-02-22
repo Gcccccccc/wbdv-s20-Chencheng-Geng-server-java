@@ -33,6 +33,13 @@ public class Widget {
         this.topicId = topicId;
     }
 
+    public Widget(String type, int order, String text, int size) {
+        this.type = type;
+        this.order = order;
+        this.text = text;
+        this.size = size;
+    }
+
     public Widget(String name, String id, String type, int order, String text, String url, int size, int width, int height, String cssClass, String style, String value, String topicId) {
         this.name = name;
         this.id = id;
