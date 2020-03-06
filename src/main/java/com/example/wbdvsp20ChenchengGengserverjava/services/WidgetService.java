@@ -50,6 +50,7 @@ public class WidgetService {
         oldWidget.setUrl(widget.getUrl());
         oldWidget.setValue(widget.getValue());
         oldWidget.setStyle(widget.getStyle());
+        oldWidget.setListType(widget.getListType());
         widgetRepository.save(oldWidget);
         return 1;
     }

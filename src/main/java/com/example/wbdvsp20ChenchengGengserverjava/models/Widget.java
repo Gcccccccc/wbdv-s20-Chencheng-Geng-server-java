@@ -27,7 +27,15 @@ public class Widget {
     private String cssClass;
     private String style;
     private String value;
+    private String listType = "UL";
 
+    public String getListType() {
+        return listType;
+    }
+
+    public void setListType(String listType) {
+        this.listType = listType;
+    }
 
     public Widget(String type, int order, String text, int size) {
         this.type = type;
