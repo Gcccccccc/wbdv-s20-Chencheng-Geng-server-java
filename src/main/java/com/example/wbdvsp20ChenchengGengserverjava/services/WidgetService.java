@@ -41,8 +41,16 @@ public class WidgetService {
     }
 
     public int updateWidget(Integer wid,Widget widget){
-        widgetRepository.deleteById(wid);
-        widgetRepository.save(widget);
+        Widget oldWidget = widgetRepository.findWidgetById(wid);
+        oldWidget.setName(widget.getName());
+        oldWidget.setType(widget.getType());
+        oldWidget.set_order(widget.get_order());
+        oldWidget.set_size(widget.get_size());
+        oldWidget.setText(widget.getText());
+        oldWidget.setUrl(widget.getUrl());
+        oldWidget.setValue(widget.getValue());
+        oldWidget.setStyle(widget.getStyle());
+        widgetRepository.save(oldWidget);
         return 1;
     }
 

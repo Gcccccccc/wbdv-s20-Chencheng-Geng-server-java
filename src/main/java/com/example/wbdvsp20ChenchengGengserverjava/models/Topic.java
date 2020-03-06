@@ -3,7 +3,8 @@ package com.example.wbdvsp20ChenchengGengserverjava.models;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name="topics")
+@Entity
+@Table(name = "topics")
 public class Topic {
 
     @Id
@@ -27,6 +28,10 @@ public class Topic {
     }
 
     public Topic() {
+    }
+
+    public Topic(String newTitle) {
+        this.title = newTitle;
     }
 
     public String getTitle() {

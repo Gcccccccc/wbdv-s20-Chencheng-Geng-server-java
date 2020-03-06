@@ -9,12 +9,12 @@ import java.util.List;
 
 public interface TopicRepository extends CrudRepository<Topic, Integer> {
 
-    @Query(value = "SELECT * FROM topics where lessonId=:lid",nativeQuery = true)
+    @Query(value = "SELECT * FROM topics WHERE lesson_id=:lid",nativeQuery = true)
     public List<Topic> findTopicsForLesson(@Param("lid") String lessonId);
 
     @Query(value = "SELECT * FROM topics",nativeQuery = true)
     public List<Topic> findAllTopics();
 
-    @Query(value = "SELECT * FROM topics where id=:tid",nativeQuery = true)
+    @Query(value = "SELECT * FROM topics WHERE id=:tid",nativeQuery = true)
     public Topic findTopicById(@Param("tid") Integer topicId);
 }

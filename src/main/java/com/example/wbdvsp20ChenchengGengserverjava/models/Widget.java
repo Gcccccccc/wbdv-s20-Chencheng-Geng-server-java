@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
-@Entity(name="widgets")
+@Entity
+@Table(name = "widgets")
 public class Widget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
